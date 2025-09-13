@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANKA - AI Akıllı Asistan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #00f2fe;
+            --dark-color: #0d0c22;
+            --text-color: #c3c4d4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .title h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            color: #fff;
+            text-shadow: 0 0 10px var(--primary-color);
+        }
+
+        .language-switcher button {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--text-color);
+            color: var(--text-color);
+            padding: 0.5rem 1rem;
+            margin-left: 0.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .language-switcher button:hover {
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+            border-color: var(--primary-color);
+        }
+
+        .language-switcher button.active {
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+            border-color: var(--primary-color);
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.5);
+        }
+
+        .intro-text {
+            text-align: center;
+            margin-bottom: 2rem;
+            max-width: 800px;
+        }
+
+        .intro-text h2 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .intro-text p {
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        main {
+            width: 100%;
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 1200px;
+            height: 65vh; 
+            border-radius: 10px;
+            border: 1px solid var(--primary-color);
+            box-shadow: 0 0 25px rgba(0, 242, 254, 0.3);
+        }
+
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 2rem 0 1rem 0;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            .title h1 {
+                font-size: 1.5rem;
+            }
+            .intro-text h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="container">
+        <header>
+            <div class="title">
+                <h1 data-translate-key="mainTitle">ANKA Grubu Akıllı Asistanı</h1>
+            </div>
+            <div class="language-switcher">
+                <button onclick="setLanguage('tr')" id="btn-tr">TR</button>
+                <button onclick="setLanguage('en')" id="btn-en">EN</button>
+                <button onclick="setLanguage('ru')" id="btn-ru">RU</button>
+            </div>
+        </header>
+
+        <div class="intro-text">
+            <h2 data-translate-key="subTitle">Bu bot, ANKA Grubu şirketleri için hızlı cevap ve anlık analiz sağlamak amacıyla geliştirilmiştir.</h2>
+            <p data-translate-key="instruction">Lütfen sorunuzu aşağıdaki sohbet penceresine yazın.</p>
+        </div>
+
+        <main>
+            <iframe
+                src="https://www.chatbase.co/chatbot-iframe/pfufn5UwG-hHLDqd3L_pT"
+                frameborder="0"
+            ></iframe>
+        </main>
+
+        <footer>
+            <p data-translate-key="footerText">© 2025 ANKA Grubu. Tüm Hakları Saklıdır.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Arka Plan Parçacık Animasyonu
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {"value": 60, "density": {"enable": true, "value_area": 800}},
+                "color": {"value": "#00f2fe"},
+                "shape": {"type": "circle"},
+                "opacity": {"value": 0.5, "random": true},
+                "size": {"value": 3, "random": true},
+                "line_linked": {"enable": true, "distance": 150, "color": "#00f2fe", "opacity": 0.4, "width": 1},
+                "move": {"enable": true, "speed": 2, "direction": "none", "out_mode": "out"}
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {"onhover": {"enable": true, "mode": "repulse"}},
+                "modes": {"repulse": {"distance": 100, "duration": 0.4}}
+            },
+            "retina_detect": true
+        });
+
+        // Dil Çeviri Sistemi
+        const translations = {
+            'tr': {
+                'mainTitle': 'ANKA Grubu Akıllı Asistanı',
+                'subTitle': 'Bu bot, ANKA Grubu şirketleri için hızlı cevap ve anlık analiz sağlamak amacıyla geliştirilmiştir.',
+                'instruction': 'Lütfen sorunuzu aşağıdaki sohbet penceresine yazın.',
+                'footerText': '© 2025 ANKA Grubu. Tüm Hakları Saklıdır.'
+            },
+            'en': {
+                'mainTitle': 'ANKA Group Intelligent Assistant',
+                'subTitle': 'This bot was developed to provide quick answers and instant analysis for ANKA Group companies.',
+                'instruction': 'Please type your question in the chat window below.',
+                'footerText': '© 2025 ANKA Group. All Rights Reserved.'
+            },
+            'ru': {
+                'mainTitle': 'Интеллектуальный помощник ANKA Group',
+                'subTitle': 'Этот бот был разработан для предоставления быстрых ответов и мгновенного анализа для компаний ANKA Group.',
+                'instruction': 'Пожалуйста, введите ваш вопрос в окне чата ниже.',
+                'footerText': '© 2025 ANKA Group. Все права защищены.'
+            }
+        };
+
+        const languageButtons = document.querySelectorAll('.language-switcher button');
+
+        function setLanguage(lang) {
+            document.documentElement.lang = lang; // Sayfanın dilini HTML etiketinde de değiştirir
+            const elementsToTranslate = document.querySelectorAll('[data-translate-key]');
+            
+            elementsToTranslate.forEach(element => {
+                const key = element.getAttribute('data-translate-key');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            languageButtons.forEach(button => button.classList.remove('active'));
+            document.getElementById(`btn-${lang}`).classList.add('active');
+
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLanguage = localStorage.getItem('preferredLanguage') || 'tr';
+            setLanguage(savedLanguage);
+        });
+    </script>
+
+</body>
+</html>
